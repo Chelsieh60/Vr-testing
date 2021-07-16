@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Locomotioncontroller : MonoBehaviour
 {
     public XRController rightTeleport;
+    public XRController leftTeleport;
     public InputHelpers.Button teleportActivation;
     public float activationThres = .1f;
     // Start is called before the first frame update
@@ -20,6 +21,10 @@ public class Locomotioncontroller : MonoBehaviour
         if (rightTeleport)
         {
             rightTeleport.gameObject.SetActive(CheckIfAct(rightTeleport));
+        }
+        if (leftTeleport)
+        {
+            leftTeleport.gameObject.SetActive(CheckIfAct(leftTeleport));
         }
     }
     public bool CheckIfAct(XRController controller)
